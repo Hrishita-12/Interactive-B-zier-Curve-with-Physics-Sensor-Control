@@ -16,14 +16,64 @@ The curve moves smoothly, visualizes its tangents, and behaves like a springy ro
 - Responsive design for desktop and mobile
 
 ---
+## 📐 **Mathematical Foundation**
 
-## 🛠️ Technical Details
-- Built with vanilla JavaScript, HTML5 Canvas
-- Uses cubic Bézier curve equations
-- Physics based on Hooke's law and damping equations
-- Works on all modern browsers and iOS devices
+### **Cubic Bézier Equations**
+The curve is defined by four control points (P₀, P₁, P₂, P₃) using Bernstein polynomials:
+B(t) = (1-t)³·P₀ + 3(1-t)²·t·P₁ + 3(1-t)·t²·P₂ + t³·P₃
+Where `t ∈ [0,1]` parameterizes the curve from start to end.
+
+### **Tangent Calculation**
+The derivative (tangent) at any point `t`:
+B'(t) = 3(1-t)²(P₁-P₀) + 6(1-t)·t(P₂-P₁) + 3t²(P₃-P₂)
+Normalized to show direction vectors along the curve.
+
+### **Implementation Details**
+- 200 segments for smooth rendering
+- Real-time recalculation on point movement which is shown on physics monitor.
+- Visual tangents updated dynamically
+
 
 ---
+
+## ⚛️ **Physics Model**
+
+### **Spring-Mass-Damper System**
+Each draggable point (P₁, P₂) behaves as a mass connected to its rest position by a spring-damper:
+Fₛ = -K·(x - x₀) (Spring force - Hooke's Law)
+Fₔ = -D·v (Damping force - viscous friction)
+Fₙ = Fₛ + Fₔ (Net force)
+a = Fₙ / m (Newton's Second Law)
+
+### **Parameters**
+- **K (Stiffness)**: 0.01-0.2 (controls spring tension)
+- **D (Damping)**: 0.05-0.2 (controls energy dissipation)
+- **m (Mass)**: 1.0 kg (fixed for simplicity)
+- **dt**: 1/60 s (fixed timestep for stability)
+
+### **Numerical Integration**
+Using Euler integration for real-time performance:
+v += a·dt
+x += v·dt
+
+### **External Forces**
+- **Mouse/Touch**: Direct position override when dragging
+- **Device Motion**: Tilt-derived acceleration forces
+
+---
+
+## 🎨 **Design Choices**
+
+### **Visual Hierarchy**
+1. **Primary Curve** (#8e80ed with 4px stroke): Main focus
+2. **Control Points**: 
+   - Yellow (#fbbf24): Draggable points P₁/P₂
+   - Green (#10b981): Fixed endpoints P₀/P₃
+3. **Guidelines**: Dashed white lines showing control polygon
+4. **Force Vectors**: Color-coded for immediate understanding
+5. **Tangents**: Red (#f72585) showing curve direction
+
+---   
 
 ## 📱 Compatibility
 - **Web**: Chrome, Firefox, Safari, Edge (latest versions)
