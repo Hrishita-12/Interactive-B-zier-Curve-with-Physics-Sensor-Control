@@ -65,7 +65,7 @@ x += v·dt
 ## 🎨 **Design Choices**
 
 ### **Visual Hierarchy**
-1. **Primary Curve** (#8e80ed with 4px stroke): Main focus
+1. **Primary Curve** (#30d0f0 with 8px stroke): Main focus
 2. **Control Points**: 
    - Yellow (#fbbf24): Draggable points P₁/P₂
    - Green (#10b981): Fixed endpoints P₀/P₃
@@ -76,8 +76,8 @@ x += v·dt
 ---   
 
 ## 📱 Compatibility
-- **Web**: Chrome, Firefox, Safari, Edge (latest versions)
-- **iOS**: Safari on iPhone/iPad (iOS 12+)
+- **Web**: Chrome, Firefox, Safari, Edge 
+- **iOS**: Safari on iPhone/iPad 
 - **Android**: Chrome (touch works, motion may vary)
 - **Desktop**: All major browsers with mouse support
 
