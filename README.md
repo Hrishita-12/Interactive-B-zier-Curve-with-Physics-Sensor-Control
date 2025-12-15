@@ -73,6 +73,22 @@ x += v·dt
 4. **Force Vectors**: Color-coded for immediate understanding
 5. **Tangents**: Red (#f72585) showing curve direction
 
+## 📊 UNDERSTANDING THE DISPLAY
+
+### **Physics Monitor**
+- **P₁/P₂ Toggle**: Switch between monitoring points
+- **Position (x,y)**: Current location on screen
+- **Target (x,y)**: Resting position (where point wants to be)
+- **Velocity**: Speed and direction of movement
+- **Acceleration**: How quickly velocity is changing
+- **Forces**: Visual vectors show spring/damping/net forces
+
+### **Reading Force Vectors**
+- 🔵 **Blue arrow (Fₛ)**: Spring force pulling toward target
+- 🔴 **Red arrow (Fₔ)**: Damping force opposing motion
+- 🟡 **Yellow arrow (Fₙ)**: Net force causing movement
+- **Longer arrow = stronger force**
+
 ---   
 
 ## 📱 Compatibility
@@ -119,21 +135,5 @@ x += v·dt
 
 ---
 
-## 📊 UNDERSTANDING THE DISPLAY
 
-### **Physics Monitor**
-- **P₁/P₂ Toggle**: Switch between monitoring points
-- **Position (x,y)**: Current location on screen
-- **Target (x,y)**: Resting position (where point wants to be)
-- **Velocity**: Speed and direction of movement
-- **Acceleration**: How quickly velocity is changing
-- **Forces**: Visual vectors show spring/damping/net forces
-
-### **Reading Force Vectors**
-- 🔵 **Blue arrow (Fₛ)**: Spring force pulling toward target
-- 🔴 **Red arrow (Fₔ)**: Damping force opposing motion
-- 🟡 **Yellow arrow (Fₙ)**: Net force causing movement
-- **Longer arrow = stronger force**
-
----
 
